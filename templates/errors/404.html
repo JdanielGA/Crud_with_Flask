@@ -1,0 +1,11 @@
+{% extends 'errors/base.html' %}
+
+{% block title %}
+    {{ super() }}
+    404
+{% endblock %}
+
+{% block content %}
+    <h1>La página que buscas no existe, revisa la url</h1>
+    <p>{{ error }}</p>
+{% endblock %}

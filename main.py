@@ -2,7 +2,13 @@ from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
 
-info = ['Info 1', 'Info 2', 'Info 3', 'Info 4', 'Info 5']
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('errors/404.html', error=error)
+
+@app.errorhandler(500)
+def internal_server_error(error):
+    return render_template('errors/500.html', error=error)
 
 @app.route("/")
 def index():
