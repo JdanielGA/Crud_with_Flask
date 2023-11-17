@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macros %}
+
+{% block title %}
+    {{ super() }}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1>Hello new user. your IP is {{ user_id }}</h1>
+    <h2>
+        <ul>
+            {% for data in info %}
+                {{ macros.render_data(data) }}
+            {% endfor %}
+        </ul>
+    </h2>
+{% endblock %}
